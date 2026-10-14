@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import GlideHighlight from "@/components/effects/glide-highlight";
 import Link from "next/link"
 import { Check } from "lucide-react"
 import { Instagram, Linkedin, Youtube, Twitter } from "lucide-react"
@@ -41,29 +42,29 @@ export default function SocialPage() {
           Profiles and a direct line. Email is humans@hackunited.org.
         </p>
 
-        <div className="border-t border-[#2c2438]">
+        <GlideHighlight className="border-t border-[#232328]" radius={10}>
           {quickLinks.map((item) => {
             const className = "atelier-row"
             if (!item.external) {
               return (
-                <Link key={item.label} href={item.href} className={className}>
+                <Link key={item.label} href={item.href} className={className} data-glide>
                   <span>{item.label}</span>
-                  <span className="text-[#c4b5fd]">→</span>
+                  <span className="text-[#d4c4ff]">→</span>
                 </Link>
               )
             }
             return (
-              <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer" className={className}>
+              <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer" className={className} data-glide>
                 <span>{item.label}</span>
-                <span className="text-[#c4b5fd]">→</span>
+                <span className="text-[#d4c4ff]">→</span>
               </a>
             )
           })}
-          <button type="button" onClick={copyEmail} className="atelier-row w-full text-left">
+          <button type="button" onClick={copyEmail} className="atelier-row w-full text-left" data-glide>
             <span>Email</span>
-            <span className="text-sm text-[#c4b5fd]">Copy</span>
+            <span className="text-sm text-[#d4c4ff]">Copy</span>
           </button>
-        </div>
+        </GlideHighlight>
 
         <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-4">
           {socials.map((item) => {
@@ -74,19 +75,19 @@ export default function SocialPage() {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between border border-[#2c2438] bg-[#14111a] px-4 py-4 text-sm text-[#f3efe6] hover:border-[#c4b5fd]"
+                className="flex items-center justify-between rounded-[14px] border border-[#232328] bg-[#0a0a0c] px-4 py-4 text-sm text-[#f4f4f6] transition-colors hover:border-[#d4c4ff]"
               >
                 {item.label}
-                <Icon className="h-4 w-4 text-[#c4b5fd]" />
+                <Icon className="h-4 w-4 text-[#d4c4ff]" />
               </a>
             )
           })}
         </div>
 
         {showCopiedMessage && (
-          <div className="fixed bottom-4 right-4 z-50 border border-[#c4b5fd] bg-[#14111a] px-4 py-3 text-sm text-[#f3efe6]">
+          <div className="fixed bottom-4 right-4 z-50 rounded-full border border-[#d4c4ff] bg-[#0a0a0c] px-4 py-3 text-sm text-[#f4f4f6]">
             <div className="flex items-center gap-2">
-              <Check className="h-4 w-4 text-[#c4b5fd]" />
+              <Check className="h-4 w-4 text-[#d4c4ff]" />
               <span>Copied humans@hackunited.org</span>
             </div>
           </div>

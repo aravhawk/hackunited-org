@@ -13,12 +13,23 @@ Our flagship event, **United Hacks**, brings together students from around the w
 
 This repository contains the source code for the official Hack United website.
 
+## Design notes (redesign)
+
+Everything below the hero was redesigned; the hero is untouched.
+
+- **Shared particle field** (`components/home/particle-field.tsx`): one fixed three.js point cloud behind About, Impact and Goals. Sections steer it through `lib/field-store.ts`, so it morphs between a globe, a double helix, a torus knot, an octahedron and a galaxy as you scroll, and reacts to the cursor.
+- **Previous hackathons** (`components/home/archive-flythrough.tsx`): a GSAP-pinned three.js flight through the real winner screenshots, V1 to V6, with a clickable edition rail. Edition data lives in `lib/home-data.ts`.
+- **Small details**: decoding headlines, scroll-scrubbed About copy, count-up stats, pointer-lit panels, a sliding nav pill with a scroll-progress line, and a footer wordmark whose letters swell near the cursor.
+- **Easter eggs and tools**: a Ctrl/Cmd+K command palette, an in-page terminal (backtick key; try `stats`, `deploy`, `gravity`, or the Konami code), a throwable press-logo marquee, halftone team portraits that develop into the photo under the cursor, and a drawable LED-dot 404 board. Components adapted from React Bits are noted in their file headers.
+- **System**: Bricolage Grotesque + JetBrains Mono, one lavender accent (`#d4c4ff`, taken from the hero), 14px panels and pill buttons. Dark mode only. `prefers-reduced-motion` is respected throughout.
+
 ## Tech Stack
 
 - **Framework:** Next.js 16
 - **Frontend:** React 19
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
+- **3D / motion:** three.js, GSAP ScrollTrigger, Motion
 
 ## Getting Started
 

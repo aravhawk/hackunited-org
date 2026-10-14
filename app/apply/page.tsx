@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import GlideHighlight from "@/components/effects/glide-highlight";
 import {
   Mail,
   Code,
@@ -192,7 +193,7 @@ export default function ApplyPage() {
 
   return (
     <main className="atelier">
-      <section className="border-b border-[#2c2438] pt-20 pb-14">
+      <section className="border-b border-[#232328] pt-20 pb-14">
         <div className="container mx-auto max-w-5xl px-4">
           <h1 className="atelier-title mb-6">
             <em>Apply</em>
@@ -208,21 +209,21 @@ export default function ApplyPage() {
         </div>
       </section>
 
-      <section className="border-b border-[#2c2438] py-16">
+      <section className="border-b border-[#232328] py-16">
         <div className="container mx-auto px-4">
           <div className="grid gap-10 lg:grid-cols-4">
             <div className="lg:col-span-1">
               <h2 className="atelier-sub mb-5">What you get</h2>
               <div className="atelier-frame">
                 <div className="atelier-frame-inner">
-                  <ul className="space-y-3 text-sm text-[#e7e1d6]">
+                  <ul className="space-y-3 text-sm text-[#f4f4f6]">
                     {benefits.map((benefit) => (
-                      <li key={benefit} className="border-b border-[#2c2438] pb-3 last:border-0 last:pb-0">
+                      <li key={benefit} className="border-b border-[#232328] pb-3 last:border-0 last:pb-0">
                         {benefit}
                       </li>
                     ))}
                   </ul>
-                  <p className="mt-5 text-xs leading-relaxed text-[#9a93ad]">
+                  <p className="mt-5 text-xs leading-relaxed text-[#8d8d96]">
                     Swag and official service-hour credit depend on your role and tenure. Ask HR if you need
                     documentation for school programs.
                   </p>
@@ -232,21 +233,22 @@ export default function ApplyPage() {
 
             <div className="lg:col-span-3">
               <h2 className="atelier-sub mb-5">Open roles</h2>
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              <GlideHighlight className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {departments.flatMap((department) =>
                   department.positions.map((position) => (
                     <button
                       key={position}
                       type="button"
                       onClick={() => openPositionModal(position)}
-                      className="border border-[#2c2438] bg-[#14111a] p-4 text-left transition-colors hover:border-[#c4b5fd]"
+                      data-glide
+                      className="rounded-[14px] border border-[#232328] bg-[#0a0a0c] p-4 text-left transition-colors hover:border-[#d4c4ff]"
                     >
-                      <p className="mb-2 text-[11px] text-[#c4b5fd]">{department.title}</p>
-                      <h3 className="text-[15px] text-[#f3efe6]">{position}</h3>
+                      <p className="mb-2 text-[11px] text-[#d4c4ff]">{department.title}</p>
+                      <h3 className="text-[15px] text-[#f4f4f6]">{position}</h3>
                     </button>
                   ))
                 )}
-              </div>
+              </GlideHighlight>
             </div>
           </div>
         </div>
@@ -268,10 +270,10 @@ export default function ApplyPage() {
           <div className="grid gap-4 md:grid-cols-2">
             <div className="atelier-frame">
               <div className="atelier-frame-inner">
-                <h3 className="mb-4 text-[#f3efe6]" style={{ fontFamily: "var(--font-serif), serif", fontSize: "1.35rem" }}>
+                <h3 className="mb-4 text-[#f4f4f6]" style={{ fontFamily: "var(--font-serif), serif", fontSize: "1.35rem" }}>
                   Process
                 </h3>
-                <ol className="list-decimal space-y-3 pl-5 text-sm text-[#c8c2b6]">
+                <ol className="list-decimal space-y-3 pl-5 text-sm text-[#a8a8b0]">
                   <li>Email your application with the details on the right.</li>
                   <li>We read applications as they arrive. You may get a follow-up interview on Discord.</li>
                   <li>If we offer you a role, HR will send onboarding steps and a team invite.</li>
@@ -280,10 +282,10 @@ export default function ApplyPage() {
             </div>
             <div className="atelier-frame">
               <div className="atelier-frame-inner">
-                <h3 className="mb-4 text-[#f3efe6]" style={{ fontFamily: "var(--font-serif), serif", fontSize: "1.35rem" }}>
+                <h3 className="mb-4 text-[#f4f4f6]" style={{ fontFamily: "var(--font-serif), serif", fontSize: "1.35rem" }}>
                   Include in your email
                 </h3>
-                <ul className="space-y-2 text-sm text-[#c8c2b6]">
+                <ul className="space-y-2 text-sm text-[#a8a8b0]">
                   <li>Full name and contact email</li>
                   <li>Age and location (country and state or region)</li>
                   <li>Role(s) you want</li>
@@ -309,20 +311,20 @@ export default function ApplyPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
           <div className="atelier-frame max-h-[90vh] w-full max-w-lg overflow-y-auto">
             <div className="atelier-frame-inner">
-              <div className="mb-6 flex items-start justify-between gap-3 border-b border-[#2c2438] pb-4">
+              <div className="mb-6 flex items-start justify-between gap-3 border-b border-[#232328] pb-4">
                 <div>
-                  <p className="mb-1 text-xs text-[#c4b5fd]">{selectedPosition.department}</p>
-                  <h3 className="text-2xl text-[#f3efe6]" style={{ fontFamily: "var(--font-serif), serif" }}>
+                  <p className="mb-1 text-xs text-[#d4c4ff]">{selectedPosition.department}</p>
+                  <h3 className="text-2xl text-[#f4f4f6]" style={{ fontFamily: "var(--font-serif), serif" }}>
                     {selectedPosition.name}
                   </h3>
                 </div>
-                <button type="button" onClick={closeModal} className="text-[#b4adc4]" aria-label="Close">
+                <button type="button" onClick={closeModal} className="text-[#a8a8b0]" aria-label="Close">
                   <X className="h-5 w-5" />
                 </button>
               </div>
-              <div className="space-y-5 text-sm text-[#c8c2b6]">
+              <div className="space-y-5 text-sm text-[#a8a8b0]">
                 <div>
-                  <h4 className="mb-2 text-[#f3efe6]">Responsibilities</h4>
+                  <h4 className="mb-2 text-[#f4f4f6]">Responsibilities</h4>
                   <ul className="list-disc space-y-1.5 pl-4">
                     {selectedPosition.responsibilities.map((item) => (
                       <li key={item}>{item}</li>
@@ -330,7 +332,7 @@ export default function ApplyPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="mb-2 text-[#f3efe6]">Requirements</h4>
+                  <h4 className="mb-2 text-[#f4f4f6]">Requirements</h4>
                   <ul className="list-disc space-y-1.5 pl-4">
                     {selectedPosition.requirements.map((item) => (
                       <li key={item}>{item}</li>

@@ -2,6 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, type CSSProperties } from "react";
+import TeamPortrait from "@/components/effects/team-portrait";
+import { thumb } from "@/lib/thumb";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import "./team.css";
 
@@ -546,21 +548,22 @@ function TeamMemberCard({
   if (size === "card") {
     return (
       <div
-        className="alum-card flex items-center gap-3 border border-[#2c2438] bg-[#14111a] px-3 py-2.5"
+        className="alum-card flex items-center gap-3 rounded-xl border border-[#232328] bg-[#0a0a0c] px-3 py-2.5"
         data-reveal
         style={revealStyle}
       >
-        <div className="relative h-12 w-10 shrink-0 overflow-hidden border border-[#3f3458]">
+        <div className="relative h-12 w-10 shrink-0 overflow-hidden rounded-md border border-[#2e2e34]">
           <Image
-            src={member.image || "/placeholder.svg"}
+            src={thumb(member.image)}
             alt={member.name}
             fill
+            sizes="40px"
             className="object-cover"
           />
         </div>
         <div className="min-w-0 flex-1">
-          <h3 className="truncate text-sm text-[#f3efe6]">{member.name}</h3>
-          <p className="truncate text-xs text-[#b4adc4]">{member.position}</p>
+          <h3 className="truncate text-sm text-[#f4f4f6]">{member.name}</h3>
+          <p className="truncate text-xs text-[#a8a8b0]">{member.position}</p>
         </div>
       </div>
     );
@@ -570,21 +573,16 @@ function TeamMemberCard({
     <div className="team-card flex flex-col items-center text-center" data-reveal style={revealStyle}>
       <div className="atelier-portrait team-portrait mb-4">
         <div className="atelier-portrait-inner">
-          <Image
-            src={member.image || "/placeholder.svg"}
-            alt={member.name}
-            fill
-            className="object-cover"
-          />
+          <TeamPortrait src={thumb(member.image)} alt={member.name} />
         </div>
       </div>
       <h3
-        className="text-[17px] text-[#f3efe6]"
+        className="text-[17px] text-[#f4f4f6]"
         style={{ fontFamily: "var(--font-serif), serif" }}
       >
         {member.name}
       </h3>
-      <p className="mt-1 max-w-[11rem] text-[12px] leading-snug text-[#b4adc4]">
+      <p className="mt-1 max-w-[11rem] text-[12px] leading-snug text-[#a8a8b0]">
         {member.position}
       </p>
     </div>
@@ -607,7 +605,7 @@ export default function TeamPage() {
         <div className="mb-16">
           <div className="atelier-frame mb-14">
             <div className="atelier-frame-inner">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 justify-items-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-10 md:gap-8 justify-items-center">
               {executiveTeam.map((member, index) => (
                 <TeamMemberCard
                   key={index}
@@ -621,7 +619,7 @@ export default function TeamPage() {
           </div>
 
           {/* Other Members Row 1 */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 justify-items-center mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-x-4 gap-y-10 md:gap-8 justify-items-center mb-12">
             {otherMembersRow1.map((member, index) => (
               <TeamMemberCard
                 key={index}
@@ -633,7 +631,7 @@ export default function TeamPage() {
           </div>
 
           {/* Other Members Row 2 */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 justify-items-center mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-x-4 gap-y-10 md:gap-8 justify-items-center mb-12">
             {otherMembersRow2.map((member, index) => (
               <TeamMemberCard
                 key={index}
@@ -645,7 +643,7 @@ export default function TeamPage() {
           </div>
 
           {/* Other Members Row 3 */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 justify-items-center">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-x-4 gap-y-10 md:gap-8 justify-items-center">
             {otherMembersRow3.map((member, index) => (
               <TeamMemberCard
                 key={index}
@@ -665,7 +663,7 @@ export default function TeamPage() {
             <h2 className="atelier-sub" data-reveal>
               <em>Previous</em> volunteers
             </h2>
-            <p className="mt-3 text-sm text-[#b4adc4]" data-reveal>Alumni who helped run past events.</p>
+            <p className="mt-3 text-sm text-[#a8a8b0]" data-reveal>Alumni who helped run past events.</p>
           </div>
 
           {/* All Previous Volunteers in Card Format */}
@@ -683,7 +681,7 @@ export default function TeamPage() {
 
         {/* Call to Action */}
         <div className="text-center mt-16">
-          <p className="text-sm text-[#c8c2b6]">
+          <p className="text-sm text-[#a8a8b0]">
             Open roles are listed on the{" "}
             <Link href="/apply" className="atelier-link">
               apply

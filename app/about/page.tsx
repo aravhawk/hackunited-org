@@ -9,7 +9,7 @@ export default function AboutPage() {
         </h1>
 
         <div className="space-y-12">
-          <section className="border-t border-[#2c2438] pt-8">
+          <section className="border-t border-[#232328] pt-8">
             <h2 className="atelier-sub mb-4"><em>Our</em> mission</h2>
             <p className="atelier-lead">
               Hack United is dedicated to empowering the next generation of innovators through accessible technology
@@ -18,7 +18,7 @@ export default function AboutPage() {
             </p>
           </section>
 
-          <section className="border-t border-[#2c2438] pt-8">
+          <section className="border-t border-[#232328] pt-8">
             <h2 className="atelier-sub mb-4"><em>Our</em> story</h2>
             <p className="atelier-lead">
               Started by a group of passionate developers who recognized the gap between traditional education and
@@ -29,17 +29,17 @@ export default function AboutPage() {
             </p>
           </section>
 
-          <section className="border-t border-[#2c2438] pt-8">
+          <section className="border-t border-[#232328] pt-8">
             <h2 className="atelier-sub mb-4"><em>What</em> we do</h2>
             <p className="atelier-lead mb-5">
               We organize hackathons, workshops, and educational programs that focus on both technical skills and
               professional development. Our events are designed to be inclusive, welcoming participants of all skill
               levels and backgrounds.
             </p>
-            <ul className="space-y-3 text-[#c8c2b6]">
-              <li className="border-b border-[#2c2438] pb-3">Free-to-enter hackathons with real-world challenges</li>
-              <li className="border-b border-[#2c2438] pb-3">Workshops led by industry professionals</li>
-              <li className="border-b border-[#2c2438] pb-3">Mentorship programs connecting students with experienced developers</li>
+            <ul className="space-y-3 text-[#a8a8b0]">
+              <li className="border-b border-[#232328] pb-3">Free-to-enter hackathons with real-world challenges</li>
+              <li className="border-b border-[#232328] pb-3">Workshops led by industry professionals</li>
+              <li className="border-b border-[#232328] pb-3">Mentorship programs connecting students with experienced developers</li>
               <li>Community building through our Discord server and social media</li>
             </ul>
           </section>

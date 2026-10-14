@@ -20,7 +20,7 @@ export default function BlogPage() {
           <div className="md:w-2/3">
             <Tabs defaultValue="all">
               <div className="flex justify-between items-center mb-6">
-                <TabsList>
+                <TabsList className="max-w-full overflow-x-auto">
                   <TabsTrigger value="all">All Posts</TabsTrigger>
                   <TabsTrigger value="tech">Tech News</TabsTrigger>
                   <TabsTrigger value="events">Events</TabsTrigger>
@@ -30,10 +30,10 @@ export default function BlogPage() {
 
               <TabsContent value="all" className="space-y-6">
                 {/* Featured Post */}
-                <Card className="mb-8">
+                <Card className="mb-8 overflow-hidden">
                   <div className="md:flex">
                     <div className="md:w-2/5 relative">
-                      <div className="aspect-[4/3] md:h-full relative">
+                      <div className="aspect-[4/3] md:aspect-auto md:absolute md:inset-0 relative">
                         <Image
                           src="/placeholder.svg?height=400&width=600"
                           alt="Featured blog post"
@@ -43,7 +43,7 @@ export default function BlogPage() {
                       </div>
                     </div>
                     <div className="md:w-3/5 p-6">
-                      <Badge className="mb-2 bg-purple-100 text-purple-800 hover:bg-purple-200">Featured</Badge>
+                      <Badge className="mb-2 bg-[#d4c4ff]/15 text-[#d4c4ff] hover:bg-[#d4c4ff]/25">Featured</Badge>
                       <h2 className="text-2xl font-bold mb-2">The Future of Hackathons in a Post-Pandemic World</h2>
                       <p className="text-muted-foreground mb-4">
                         How virtual and hybrid events are shaping the future of collaborative coding and innovation.
@@ -53,7 +53,7 @@ export default function BlogPage() {
                         <span>•</span>
                         <span>8 min read</span>
                       </div>
-                      <Button className="bg-purple-600 hover:bg-purple-700">Read More</Button>
+                      <Button className="bg-[#d4c4ff] text-[#0b0813] hover:bg-white">Read More</Button>
                     </div>
                   </div>
                 </Card>
@@ -222,7 +222,7 @@ export default function BlogPage() {
               <CardContent>
                 <div className="relative">
                   <Input placeholder="Search articles..." />
-                  <Button className="absolute right-0 top-0 h-full rounded-l-none bg-purple-600 hover:bg-purple-700">
+                  <Button className="absolute right-0 top-0 h-full rounded-l-none bg-[#d4c4ff] text-[#0b0813] hover:bg-white">
                     Search
                   </Button>
                 </div>
@@ -318,7 +318,7 @@ export default function BlogPage() {
               <CardContent>
                 <form className="space-y-4">
                   <Input placeholder="Your email address" />
-                  <Button className="w-full bg-purple-600 hover:bg-purple-700">Subscribe</Button>
+                  <Button className="w-full bg-[#d4c4ff] text-[#0b0813] hover:bg-white">Subscribe</Button>
                 </form>
               </CardContent>
             </Card>

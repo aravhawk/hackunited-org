@@ -67,14 +67,14 @@ export default function WrappedPage() {
                 <div className="absolute inset-0 z-[115] bg-black/80 backdrop-blur-md flex flex-col items-center justify-center text-white p-6 text-center animate-in fade-in duration-700">
                     <div className="max-w-md space-y-8">
                         <div className="space-y-4">
-                            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                                2025 WRAPPED
+                            <h1 className="font-display text-5xl md:text-7xl font-bold tracking-[-0.035em] text-white">
+                                2025 <span className="text-[#d4c4ff]">WRAPPED</span>
                             </h1>
                         </div>
 
                         <button
                             onClick={handleStartWithSound}
-                            className="group relative inline-flex items-center justify-center px-10 py-5 font-bold text-white transition-all duration-300 bg-purple-600 rounded-full hover:bg-purple-500 hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(147,51,234,0.5)]"
+                            className="group relative inline-flex items-center justify-center px-10 py-5 font-semibold text-[#0b0813] transition-all duration-300 bg-[#d4c4ff] rounded-full hover:bg-white hover:-translate-y-0.5 active:scale-95"
                         >
                             <Play className="w-6 h-6 mr-3 fill-current" />
                             <span>PLAY WITH SOUND</span>
@@ -87,6 +87,7 @@ export default function WrappedPage() {
 
             <video
                 ref={videoRef}
+                preload="metadata"
                 className="h-full aspect-[9/16] object-cover pointer-events-none shadow-[0_0_100px_rgba(0,0,0,0.5)]"
                 src="/videos/wrapped2025.mp4"
                 playsInline

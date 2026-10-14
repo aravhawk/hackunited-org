@@ -80,7 +80,7 @@ export default function SponsorsPage() {
             </CardFooter>
           </Card>
 
-          <Card className="border-purple-200 shadow-lg">
+          <Card className="border-[#d4c4ff]/60">
             <CardHeader>
               <CardTitle>Silver Tier</CardTitle>
               <CardDescription>For medium-sized companies</CardDescription>
@@ -159,7 +159,7 @@ export default function SponsorsPage() {
               </ul>
             </CardContent>
             <CardFooter>
-              <Button className="w-full bg-purple-600 hover:bg-purple-700">Contact Us</Button>
+              <Button className="w-full bg-[#d4c4ff] text-[#0b0813] hover:bg-white">Contact Us</Button>
             </CardFooter>
           </Card>
 
@@ -268,7 +268,7 @@ export default function SponsorsPage() {
           <h2 className="text-2xl font-bold mb-6 text-center">Why Sponsor Hack United?</h2>
           <div className="space-y-6">
             <div className="flex gap-4">
-              <div className="bg-purple-100 rounded-full p-3 h-fit">
+              <div className="bg-[#d4c4ff]/15 rounded-full p-3 h-fit">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -279,7 +279,7 @@ export default function SponsorsPage() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="h-6 w-6 text-purple-600"
+                  className="h-6 w-6 text-[#d4c4ff]"
                 >
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                 </svg>
@@ -294,7 +294,7 @@ export default function SponsorsPage() {
             </div>
 
             <div className="flex gap-4">
-              <div className="bg-purple-100 rounded-full p-3 h-fit">
+              <div className="bg-[#d4c4ff]/15 rounded-full p-3 h-fit">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -305,7 +305,7 @@ export default function SponsorsPage() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="h-6 w-6 text-purple-600"
+                  className="h-6 w-6 text-[#d4c4ff]"
                 >
                   <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
                   <line x1="7" y1="7" x2="7.01" y2="7"></line>
@@ -321,7 +321,7 @@ export default function SponsorsPage() {
             </div>
 
             <div className="flex gap-4">
-              <div className="bg-purple-100 rounded-full p-3 h-fit">
+              <div className="bg-[#d4c4ff]/15 rounded-full p-3 h-fit">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -332,7 +332,7 @@ export default function SponsorsPage() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="h-6 w-6 text-purple-600"
+                  className="h-6 w-6 text-[#d4c4ff]"
                 >
                   <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
                   <path d="M2 17l10 5 10-5"></path>
@@ -351,7 +351,7 @@ export default function SponsorsPage() {
 
           <div className="mt-12 text-center">
             <h3 className="font-bold text-lg mb-4">Interested in becoming a sponsor?</h3>
-            <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
+            <Button size="lg" className="bg-[#d4c4ff] text-[#0b0813] hover:bg-white">
               Contact Our Sponsorship Team
             </Button>
           </div>
